@@ -13,7 +13,7 @@ public class InterviewQuestion {
 
     public static void main(String[] args) throws IOException {
         // write your code her
-        File folder = new File("/Users/lbenzzine/Documents/reactive/demo/src/main/java");
+        File folder = new File("/Users/lbenzzine/Documents/reactive/");
         final BlockingQueue<File> myQueue = new ArrayBlockingQueue<>(500);
 
         for (File f : folder.listFiles()) {
@@ -34,6 +34,8 @@ public class InterviewQuestion {
 
             };
             pool.execute(runnable);
+
         }
+        pool.shutdown();
     }
 }
